@@ -15,4 +15,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [StatisticsController::class, 'showDeveloperStats'])->name('developer.stats');
+Route::get('/developers/{id}/details', [StatisticsController::class, 'showDeveloperDetails'])->name('developers.details');
+
 

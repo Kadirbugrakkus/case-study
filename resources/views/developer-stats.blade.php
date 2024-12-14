@@ -31,6 +31,7 @@
         <th>Atanmış Toplam Saat</th>
         <th>Gerçek Süre (Saat)</th>
         <th>Tahmini Tamamlama Süresi (Hafta)</th>
+        <th>Detay</th>
     </tr>
     </thead>
     <tbody>
@@ -41,6 +42,11 @@
             <td>{{ number_format($developer['total_hours'], 2) }}</td>
             <td>{{ number_format($developer['real_hours'], 2) }}</td>
             <td>{{ $developer['weeks_to_finish'] }}</td>
+            <td>
+                <a href="{{ route('developers.details', $developer['developer_id']) }}" class="btn btn-primary btn-sm">
+                    <i class="fa fa-eye"></i> Detay
+                </a>
+            </td>
         </tr>
     @endforeach
     </tbody>

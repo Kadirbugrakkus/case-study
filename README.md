@@ -48,26 +48,24 @@ Projeyi çalıştırmak için aşağıdaki komutu çalıştırın:
 php artisan serve
 ```
 
-### Adım 6: Görevleri Alma ve Atama
+### Adım 6: Görevleri Atama
 
-Projeyi çalıştırdıktan sonra bu adıma kadar veritabanı oluşturlmuş ve seedler eklenmiş olmalı, bunlardan sonrası için otomatik atama aktif hale getirilmeli aşağıdaki komutu çalıştırın:
+Önceki adımlardan sonra bu kısım her dakika Schedule ile atanmamış bir task varsa atama işlemini sağlayacak:
 
 ```bash
 php artisan schedule:work
 ```
 
+### Adım 7: Görevleri Alma
 
-### Not: Alma ve Atama
-
-#### - Görevler manuel alınabildiği gibi schedule ile her dakika oluşturulur ve atanabilir. Ayrı ayrı komutları (console) aşağıda belirtilmiştir.
-
-```bash
-php artisan tasks:fetch
-```
+İlgili mock verileri (Task) veri tabanına iki farklı apiden olacak şekilde ekler :
 
 ```bash
-php artisan tasks:assignment
+php artisan task:fetch
 ```
+
+
+### Not: HTTP Facede
 
 #### - Mock veriler için API oluşturuldu ancak Laravel'de Http Facede istekleri projenin kendisine yapıldığı takdirde hata verebiliyor, bundan dolayı ilgili satır incelemeniz için açıklama satırı haline getirildi ve "app" kullanılarak uygulamanın kendisine istek atıldı.
 
